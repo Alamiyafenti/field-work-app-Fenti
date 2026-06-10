@@ -1,0 +1,27 @@
+{
+  "name": "field-work-reporting-system",
+  "version": "1.0.0",
+  "description": "Full-stack field work reporting application",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w frontend",
+    "start": "concurrently \"npm start -w backend\" \"npm run dev -w frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "fieldwork",
+    "reporting",
+    "management"
+  ],
+  "author": "",
+  "license": "ISC"
+}
+
+

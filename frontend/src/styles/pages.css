@@ -1,0 +1,35 @@
+/* ─── Page shell ─────────────────────────────── */
+.page-shell  { @apply space-y-4; }
+.page-section { @apply card; }
+
+/* ─── Grids ──────────────────────────────────── */
+.page-actions { @apply grid grid-cols-1 md:grid-cols-2 gap-4; }
+.page-grid-2  { @apply grid grid-cols-1 md:grid-cols-2 gap-4; }
+.page-grid-3  { @apply grid grid-cols-1 md:grid-cols-3 gap-4; }
+
+/* ─── Stats ──────────────────────────────────── */
+.stats-grid { @apply grid grid-cols-2 md:grid-cols-4 gap-3; }
+
+.stat-tile {
+  @apply rounded-2xl border border-gray-200 bg-white p-4 text-center shadow-sm
+         hover:shadow-md hover:border-blue-200 transition-all duration-150;
+}
+
+/* ─── Tables ─────────────────────────────────── */
+.table-shell { @apply overflow-x-auto rounded-2xl border border-gray-200 shadow-sm; }
+
+table { @apply w-full text-sm; }
+thead tr { @apply bg-gray-50 border-b border-gray-200; }
+thead th { @apply px-4 py-3 text-right font-bold text-gray-700; }
+tbody tr { @apply border-b border-gray-100 hover:bg-blue-50/30 transition-colors; }
+tbody td { @apply px-4 py-3 text-gray-700; }
+
+/* ─── Info rows ──────────────────────────────── */
+.info-row {
+  @apply flex items-center justify-between py-2 border-b border-gray-100 last:border-0 text-sm;
+}
+.info-label  { @apply text-gray-500 font-semibold; }
+.info-value  { @apply text-gray-900 font-semibold; }
+
+/* ─── Filter panel ───────────────────────────── */
+.filter-panel { @apply card border border-blue-100 bg-blue-50/40; }
