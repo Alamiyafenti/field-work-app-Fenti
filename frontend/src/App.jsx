@@ -96,7 +96,7 @@ function App() {
           {currentUser && (
             <nav className="flex items-center gap-1 pb-2 overflow-x-auto">
               <NavLink to="/"         label="לוח בקרה" icon="🏠" current={location.pathname} />
-              {isEmployee && (
+              {(isEmployee || isManager) && (
                 <NavLink to="/report" label="דוח חדש"   icon="📝" current={location.pathname} />
               )}
               {isManager && (
@@ -116,7 +116,7 @@ function App() {
         <Routes>
           <Route path="/"          element={currentUser ? <Dashboard /> : <Navigate to="/login" replace />} />
           <Route path="/login"     element={currentUser ? <Navigate to={isManager ? '/manager' : '/report'} replace /> : <Login setCurrentUser={setCurrentUser} currentUser={currentUser} />} />
-          <Route path="/report"    element={isEmployee ? <ReportForm currentUser={currentUser} /> : <Navigate to="/login" replace />} />
+          <Route path="/report"    element={(isEmployee || isManager) ? <ReportForm currentUser={currentUser} /> : <Navigate to="/login" replace />} />
           <Route path="/manager"   element={isManager  ? <Manager   currentUser={currentUser} /> : <Navigate to="/login" replace />} />
           <Route path="/reports"   element={isManager  ? <Reports   /> : <Navigate to="/login" replace />} />
           <Route path="/employees" element={isManager  ? <Employees /> : <Navigate to="/login" replace />} />

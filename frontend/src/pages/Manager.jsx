@@ -1,4 +1,5 @@
 ﻿import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Toast from '../components/Toast';
 import { API_URL } from '../config/api';
@@ -447,6 +448,9 @@ function Manager({ currentUser }) {
         <div className="page-header">
           <h1 className="page-title">פאנל מנהל</h1>
           <p className="page-subtitle">ניהול עובדים, פרויקטים ואישור דוחות</p>
+          <div className="mt-3">
+            <Link to="/report" className="btn-primary">+ צור דוח חדש</Link>
+          </div>
         </div>
 
         {/* ── Tabs ── */}

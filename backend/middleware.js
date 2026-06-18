@@ -58,7 +58,8 @@ const requireManagerAccess = (req, res, next) => {
 
 const requireEmployeeAccess = (req, res, next) => {
   const user = getUserFromHeaders(req);
-  if (!user || user.role !== 'employee') {
+  // Allow employees and managers to perform employee actions (managers can create reports too)
+  if (!user || (user.role !== 'employee' && user.role !== 'manager')) {
     return res.status(403).json({ error: 'Unauthorized access to employee features' });
   }
 
